@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "lib-tamo": {
+      "root": "projects/lib-tamo",
+      "sourceRoot": "projects/lib-tamo/src",
+      "projectType": "library",
+      "prefix": "enl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lib-tamo/tsconfig.lib.json",
+            "project": "projects/lib-tamo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/lib-tamo/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-tamo/src/test.ts",
+            "tsConfig": "projects/lib-tamo/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-tamo/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lib-tamo/tsconfig.lib.json",
+              "projects/lib-tamo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng6-lib-tamo"
