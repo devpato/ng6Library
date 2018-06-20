@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "npm_pack": "cd dist/lib-tamo && npm pack"
+    "npm_pack": "cd dist/lib-tamo && npm pack",
+    "package": "ng build lib-tamo && npm run npm_pack"
   },
   "private": true,
   "dependencies": {
